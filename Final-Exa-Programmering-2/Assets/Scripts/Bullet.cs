@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
 
 	private void Update() {
 		 if (Vector3.Distance(transform.position, startPosition) > CollisionWeapon.Instance.stats.maxDistance)
-			DestroyImmediate(gameObject);
+			Destroy(gameObject);
 	}
 
 	private void OnTriggerEnter(Collider other) {
 		other.gameObject.GetComponent<Enemy>().WasHit(CollisionWeapon.Instance.stats.damage);
-		DestroyImmediate(gameObject);
+		Destroy(gameObject);
 	}
 }

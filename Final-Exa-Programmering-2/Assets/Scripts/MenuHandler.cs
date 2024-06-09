@@ -10,6 +10,7 @@ public class MenuHandler : MonoBehaviour {
 	[SerializeField] Settings settingsFile;
 	[SerializeField] Slider _slider;
 	[SerializeField] TextMeshProUGUI mouseSensativityText;
+	[SerializeField] TextMeshProUGUI instructionsText;
 
 	void Start() {
 		_slider.value = settingsFile.rotationCoefficient;
@@ -22,6 +23,7 @@ public class MenuHandler : MonoBehaviour {
 
 	public void ToggleOptionsMenu(bool enable) {
 		optionsMenu.SetActive(enable);
+		instructionsText.enabled = !enable;
 	}
 
 	public void ChangeMouseSensativity(float sensativity) {
